@@ -1,0 +1,1316 @@
+{
+    "tables": [
+        {
+            "name": "dosen",
+            "schema": "public",
+            "note": null,
+            "columns": [
+                {
+                    "name": "id_dosen",
+                    "type": {
+                        "name": "varchar(10)",
+                        "schemaName": null,
+                        "args": "10",
+                        "original": null
+                    },
+                    "primaryKey": true,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "nama_dosen",
+                    "type": {
+                        "name": "varchar(100)",
+                        "schemaName": null,
+                        "args": "100",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "id_prodi",
+                    "type": {
+                        "name": "varchar(10)",
+                        "schemaName": null,
+                        "args": "10",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                }
+            ],
+            "indexes": [
+                {
+                    "name": "id_prodi",
+                    "type": null,
+                    "unique": false,
+                    "columns": [
+                        "id_prodi"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "fakultas",
+            "schema": "public",
+            "note": null,
+            "columns": [
+                {
+                    "name": "id_fakultas",
+                    "type": {
+                        "name": "varchar(10)",
+                        "schemaName": null,
+                        "args": "10",
+                        "original": null
+                    },
+                    "primaryKey": true,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "nama_fakultas",
+                    "type": {
+                        "name": "varchar(100)",
+                        "schemaName": null,
+                        "args": "100",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "no_gedung",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "name": "jadwal_kuliah",
+            "schema": "public",
+            "note": null,
+            "columns": [
+                {
+                    "name": "id_jadwal",
+                    "type": {
+                        "name": "varchar(10)",
+                        "schemaName": null,
+                        "args": "10",
+                        "original": null
+                    },
+                    "primaryKey": true,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "id_kelas",
+                    "type": {
+                        "name": "varchar(10)",
+                        "schemaName": null,
+                        "args": "10",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "hari",
+                    "type": {
+                        "name": "varchar(10)",
+                        "schemaName": null,
+                        "args": "10",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "jam_mulai",
+                    "type": {
+                        "name": "time",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "jam_selesai",
+                    "type": {
+                        "name": "time",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "ruangan",
+                    "type": {
+                        "name": "varchar(10)",
+                        "schemaName": null,
+                        "args": "10",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                }
+            ],
+            "indexes": [
+                {
+                    "name": "id_kelas",
+                    "type": null,
+                    "unique": false,
+                    "columns": [
+                        "id_kelas"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "kelas",
+            "schema": "public",
+            "note": null,
+            "columns": [
+                {
+                    "name": "id_kelas",
+                    "type": {
+                        "name": "varchar(10)",
+                        "schemaName": null,
+                        "args": "10",
+                        "original": null
+                    },
+                    "primaryKey": true,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "nama_kelas",
+                    "type": {
+                        "name": "varchar(10)",
+                        "schemaName": null,
+                        "args": "10",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "kode_mk",
+                    "type": {
+                        "name": "varchar(10)",
+                        "schemaName": null,
+                        "args": "10",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "id_dosen",
+                    "type": {
+                        "name": "varchar(10)",
+                        "schemaName": null,
+                        "args": "10",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                }
+            ],
+            "indexes": [
+                {
+                    "name": "kode_mk",
+                    "type": null,
+                    "unique": false,
+                    "columns": [
+                        "kode_mk"
+                    ]
+                },
+                {
+                    "name": "id_dosen",
+                    "type": null,
+                    "unique": false,
+                    "columns": [
+                        "id_dosen"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "khs",
+            "schema": "public",
+            "note": null,
+            "columns": [
+                {
+                    "name": "id_khs",
+                    "type": {
+                        "name": "varchar(10)",
+                        "schemaName": null,
+                        "args": "10",
+                        "original": null
+                    },
+                    "primaryKey": true,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "nim",
+                    "type": {
+                        "name": "varchar(20)",
+                        "schemaName": null,
+                        "args": "20",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "semester",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "ips",
+                    "type": {
+                        "name": "decimal(3,2)",
+                        "schemaName": null,
+                        "args": "3,2",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "total_sks",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                }
+            ],
+            "indexes": [
+                {
+                    "name": "nim",
+                    "type": null,
+                    "unique": false,
+                    "columns": [
+                        "nim"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "krs",
+            "schema": "public",
+            "note": null,
+            "columns": [
+                {
+                    "name": "id_krs",
+                    "type": {
+                        "name": "varchar(10)",
+                        "schemaName": null,
+                        "args": "10",
+                        "original": null
+                    },
+                    "primaryKey": true,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "nim",
+                    "type": {
+                        "name": "varchar(20)",
+                        "schemaName": null,
+                        "args": "20",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "id_kelas",
+                    "type": {
+                        "name": "varchar(10)",
+                        "schemaName": null,
+                        "args": "10",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "semester",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "tanggal_krs",
+                    "type": {
+                        "name": "date",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "status_krs",
+                    "type": {
+                        "name": "varchar(20)",
+                        "schemaName": null,
+                        "args": "20",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                }
+            ],
+            "indexes": [
+                {
+                    "name": "nim",
+                    "type": null,
+                    "unique": false,
+                    "columns": [
+                        "nim"
+                    ]
+                },
+                {
+                    "name": "id_kelas",
+                    "type": null,
+                    "unique": false,
+                    "columns": [
+                        "id_kelas"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "mahasiswa",
+            "schema": "public",
+            "note": null,
+            "columns": [
+                {
+                    "name": "nim",
+                    "type": {
+                        "name": "varchar(20)",
+                        "schemaName": null,
+                        "args": "20",
+                        "original": null
+                    },
+                    "primaryKey": true,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "nama_mahasiswa",
+                    "type": {
+                        "name": "varchar(100)",
+                        "schemaName": null,
+                        "args": "100",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "jenis_kelamin",
+                    "type": {
+                        "name": "char(1)",
+                        "schemaName": null,
+                        "args": "1",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "tanggal_lahir",
+                    "type": {
+                        "name": "date",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "alamat",
+                    "type": {
+                        "name": "varchar(100)",
+                        "schemaName": null,
+                        "args": "100",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "id_prodi",
+                    "type": {
+                        "name": "varchar(10)",
+                        "schemaName": null,
+                        "args": "10",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                }
+            ],
+            "indexes": [
+                {
+                    "name": "id_prodi",
+                    "type": null,
+                    "unique": false,
+                    "columns": [
+                        "id_prodi"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "matakuliah",
+            "schema": "public",
+            "note": null,
+            "columns": [
+                {
+                    "name": "kode_mk",
+                    "type": {
+                        "name": "varchar(10)",
+                        "schemaName": null,
+                        "args": "10",
+                        "original": null
+                    },
+                    "primaryKey": true,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "nama_mk",
+                    "type": {
+                        "name": "varchar(20)",
+                        "schemaName": null,
+                        "args": "20",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "sks",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "semester",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "id_prodi",
+                    "type": {
+                        "name": "varchar(10)",
+                        "schemaName": null,
+                        "args": "10",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                }
+            ],
+            "indexes": [
+                {
+                    "name": "id_prodi",
+                    "type": null,
+                    "unique": false,
+                    "columns": [
+                        "id_prodi"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "presensi",
+            "schema": "public",
+            "note": null,
+            "columns": [
+                {
+                    "name": "id_presensi",
+                    "type": {
+                        "name": "varchar(10)",
+                        "schemaName": null,
+                        "args": "10",
+                        "original": null
+                    },
+                    "primaryKey": true,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "nim",
+                    "type": {
+                        "name": "varchar(20)",
+                        "schemaName": null,
+                        "args": "20",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "id_kelas",
+                    "type": {
+                        "name": "varchar(10)",
+                        "schemaName": null,
+                        "args": "10",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "tanggal",
+                    "type": {
+                        "name": "date",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "pertemuan_ke",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "status_hadir",
+                    "type": {
+                        "name": "varchar(15)",
+                        "schemaName": null,
+                        "args": "15",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                }
+            ],
+            "indexes": [
+                {
+                    "name": "nim",
+                    "type": null,
+                    "unique": false,
+                    "columns": [
+                        "nim"
+                    ]
+                },
+                {
+                    "name": "id_kelas",
+                    "type": null,
+                    "unique": false,
+                    "columns": [
+                        "id_kelas"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "prodi",
+            "schema": "public",
+            "note": null,
+            "columns": [
+                {
+                    "name": "id_prodi",
+                    "type": {
+                        "name": "varchar(10)",
+                        "schemaName": null,
+                        "args": "10",
+                        "original": null
+                    },
+                    "primaryKey": true,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "nama_prodi",
+                    "type": {
+                        "name": "varchar(100)",
+                        "schemaName": null,
+                        "args": "100",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "id_fakultas",
+                    "type": {
+                        "name": "varchar(10)",
+                        "schemaName": null,
+                        "args": "10",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                }
+            ],
+            "indexes": [
+                {
+                    "name": "id_fakultas",
+                    "type": null,
+                    "unique": false,
+                    "columns": [
+                        "id_fakultas"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "tanskrip",
+            "schema": "public",
+            "note": null,
+            "columns": [
+                {
+                    "name": "id_transkrip",
+                    "type": {
+                        "name": "varchar(10)",
+                        "schemaName": null,
+                        "args": "10",
+                        "original": null
+                    },
+                    "primaryKey": true,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "nim",
+                    "type": {
+                        "name": "varchar(20)",
+                        "schemaName": null,
+                        "args": "20",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "ipk",
+                    "type": {
+                        "name": "decimal(3,2)",
+                        "schemaName": null,
+                        "args": "3,2",
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "total_sks_lulus",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "tanggal_cetak",
+                    "type": {
+                        "name": "date",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": true,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                }
+            ],
+            "indexes": [
+                {
+                    "name": "nim",
+                    "type": null,
+                    "unique": false,
+                    "columns": [
+                        "nim"
+                    ]
+                }
+            ]
+        }
+    ],
+    "enums": [],
+    "refs": [
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "dosen",
+                    "columns": [
+                        "id_prodi"
+                    ],
+                    "relation": "*"
+                },
+                {
+                    "schema": "public",
+                    "table": "prodi",
+                    "columns": [
+                        "id_prodi"
+                    ],
+                    "relation": "1"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "jadwal_kuliah",
+                    "columns": [
+                        "id_kelas"
+                    ],
+                    "relation": "*"
+                },
+                {
+                    "schema": "public",
+                    "table": "kelas",
+                    "columns": [
+                        "id_kelas"
+                    ],
+                    "relation": "1"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "kelas",
+                    "columns": [
+                        "kode_mk"
+                    ],
+                    "relation": "*"
+                },
+                {
+                    "schema": "public",
+                    "table": "matakuliah",
+                    "columns": [
+                        "kode_mk"
+                    ],
+                    "relation": "1"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "kelas",
+                    "columns": [
+                        "id_dosen"
+                    ],
+                    "relation": "*"
+                },
+                {
+                    "schema": "public",
+                    "table": "dosen",
+                    "columns": [
+                        "id_dosen"
+                    ],
+                    "relation": "1"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "khs",
+                    "columns": [
+                        "nim"
+                    ],
+                    "relation": "*"
+                },
+                {
+                    "schema": "public",
+                    "table": "mahasiswa",
+                    "columns": [
+                        "nim"
+                    ],
+                    "relation": "1"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "krs",
+                    "columns": [
+                        "nim"
+                    ],
+                    "relation": "*"
+                },
+                {
+                    "schema": "public",
+                    "table": "mahasiswa",
+                    "columns": [
+                        "nim"
+                    ],
+                    "relation": "1"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "krs",
+                    "columns": [
+                        "id_kelas"
+                    ],
+                    "relation": "*"
+                },
+                {
+                    "schema": "public",
+                    "table": "kelas",
+                    "columns": [
+                        "id_kelas"
+                    ],
+                    "relation": "1"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "mahasiswa",
+                    "columns": [
+                        "id_prodi"
+                    ],
+                    "relation": "*"
+                },
+                {
+                    "schema": "public",
+                    "table": "prodi",
+                    "columns": [
+                        "id_prodi"
+                    ],
+                    "relation": "1"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "matakuliah",
+                    "columns": [
+                        "id_prodi"
+                    ],
+                    "relation": "*"
+                },
+                {
+                    "schema": "public",
+                    "table": "prodi",
+                    "columns": [
+                        "id_prodi"
+                    ],
+                    "relation": "1"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "presensi",
+                    "columns": [
+                        "nim"
+                    ],
+                    "relation": "*"
+                },
+                {
+                    "schema": "public",
+                    "table": "mahasiswa",
+                    "columns": [
+                        "nim"
+                    ],
+                    "relation": "1"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "presensi",
+                    "columns": [
+                        "id_kelas"
+                    ],
+                    "relation": "*"
+                },
+                {
+                    "schema": "public",
+                    "table": "kelas",
+                    "columns": [
+                        "id_kelas"
+                    ],
+                    "relation": "1"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "prodi",
+                    "columns": [
+                        "id_fakultas"
+                    ],
+                    "relation": "*"
+                },
+                {
+                    "schema": "public",
+                    "table": "fakultas",
+                    "columns": [
+                        "id_fakultas"
+                    ],
+                    "relation": "1"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "tanskrip",
+                    "columns": [
+                        "nim"
+                    ],
+                    "relation": "*"
+                },
+                {
+                    "schema": "public",
+                    "table": "mahasiswa",
+                    "columns": [
+                        "nim"
+                    ],
+                    "relation": "1"
+                }
+            ]
+        }
+    ],
+    "version": 1,
+    "generated_at": "2026-10-19T15:21:52+00:00"
+}
