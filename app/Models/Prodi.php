@@ -11,18 +11,26 @@ class Prodi extends Model
 
     // @dbml-sync:table-property
     protected $table = 'prodi';
+
+    protected $primaryKey = 'id_prodi';
+
+    protected $keyType = 'string';
+
+    public $incrementing = false;
+
+    public $timestamps = false;
     // @enddbml-sync:table-property
 
     // @dbml-sync:fillable
     protected $fillable = [
         'nama_prodi',
-		'id_fakultas'
+        'id_fakultas',
     ];
     // @enddbml-sync:fillable
 
     // @dbml-sync:casts
     protected $casts = [
-        
+
     ];
     // @enddbml-sync:casts
 

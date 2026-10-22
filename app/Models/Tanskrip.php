@@ -11,20 +11,28 @@ class Tanskrip extends Model
 
     // @dbml-sync:table-property
     protected $table = 'tanskrip';
+
+    protected $primaryKey = 'id_transkrip';
+
+    protected $keyType = 'string';
+
+    public $incrementing = false;
+
+    public $timestamps = false;
     // @enddbml-sync:table-property
 
     // @dbml-sync:fillable
     protected $fillable = [
         'nim',
-		'ipk',
-		'total_sks_lulus',
-		'tanggal_cetak'
+        'ipk',
+        'total_sks_lulus',
+        'tanggal_cetak',
     ];
     // @enddbml-sync:fillable
 
     // @dbml-sync:casts
     protected $casts = [
-        'tanggal_cetak' => 'date'
+        'tanggal_cetak' => 'date',
     ];
     // @enddbml-sync:casts
 

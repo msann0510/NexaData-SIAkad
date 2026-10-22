@@ -11,22 +11,30 @@ class JadwalKuliah extends Model
 
     // @dbml-sync:table-property
     protected $table = 'jadwal_kuliah';
+
+    protected $primaryKey = 'id_jadwal';
+
+    protected $keyType = 'string';
+
+    public $incrementing = false;
+
+    public $timestamps = false;
     // @enddbml-sync:table-property
 
     // @dbml-sync:fillable
     protected $fillable = [
         'id_kelas',
-		'hari',
-		'jam_mulai',
-		'jam_selesai',
-		'ruangan'
+        'hari',
+        'jam_mulai',
+        'jam_selesai',
+        'ruangan',
     ];
     // @enddbml-sync:fillable
 
     // @dbml-sync:casts
     protected $casts = [
         'jam_mulai' => 'datetime',
-		'jam_selesai' => 'datetime'
+        'jam_selesai' => 'datetime',
     ];
     // @enddbml-sync:casts
 

@@ -3,7 +3,7 @@
 namespace Tests\Feature;
 
 use App\Models\Mahasiswa;
-use Database\Seeders\DatabaseSeeder;
+use Database\Seeders\MahasiswaSeeder;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
@@ -38,15 +38,6 @@ class MahasiswaSeederTest extends TestCase
             $table->foreign('id_prodi')->references('id_prodi')->on('prodi');
         });
 
-        Schema::create('users', function (Blueprint $table): void {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
-        });
     }
 
     public function test_mahasiswa_factory_creates_a_model_with_its_string_primary_key(): void
@@ -60,15 +51,33 @@ class MahasiswaSeederTest extends TestCase
         $this->assertDatabaseHas('mahasiswa', ['nim' => $mahasiswa->getKey()]);
     }
 
-    public function test_database_seeder_creates_exactly_one_hundred_thousand_mahasiswa(): void
+    public function test_mahasiswa_seeder_distributes_one_hundred_thousand_records_across_all_programs(): void
     {
-        $this->seed(DatabaseSeeder::class);
+        $this->createProdiRecords(100);
+
+        $this->seed(MahasiswaSeeder::class);
 
         $this->assertDatabaseCount('mahasiswa', 100_000);
-        $this->assertDatabaseHas('mahasiswa', ['id_prodi' => 'P001']);
+        $this->assertSame(
+            0,
+            DB::table('mahasiswa')
+                ->select('id_prodi')
+                ->groupBy('id_prodi')
+                ->havingRaw('COUNT(*) != 1000')
+                ->count()
+        );
+
+        $this->seed(MahasiswaSeeder::class);
+
+        $this->assertDatabaseCount('mahasiswa', 100_000);
     }
 
     private function createProdi(): void
+    {
+        $this->createProdiRecords(1);
+    }
+
+    private function createProdiRecords(int $count): void
     {
         DB::table('fakultas')->insert([
             'id_fakultas' => 'F001',
@@ -76,10 +85,16 @@ class MahasiswaSeederTest extends TestCase
             'no_gedung' => 1,
         ]);
 
-        DB::table('prodi')->insert([
-            'id_prodi' => 'P001',
-            'nama_prodi' => 'Informatika',
-            'id_fakultas' => 'F001',
-        ]);
+        $prodis = [];
+
+        for ($index = 1; $index <= $count; $index++) {
+            $prodis[] = [
+                'id_prodi' => sprintf('P%03d', $index),
+                'nama_prodi' => 'Program Studi '.$index,
+                'id_fakultas' => 'F001',
+            ];
+        }
+
+        DB::table('prodi')->insert($prodis);
     }
 }

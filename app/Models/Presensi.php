@@ -11,21 +11,29 @@ class Presensi extends Model
 
     // @dbml-sync:table-property
     protected $table = 'presensi';
+
+    protected $primaryKey = 'id_presensi';
+
+    protected $keyType = 'string';
+
+    public $incrementing = false;
+
+    public $timestamps = false;
     // @enddbml-sync:table-property
 
     // @dbml-sync:fillable
     protected $fillable = [
         'nim',
-		'id_kelas',
-		'tanggal',
-		'pertemuan_ke',
-		'status_hadir'
+        'id_kelas',
+        'tanggal',
+        'pertemuan_ke',
+        'status_hadir',
     ];
     // @enddbml-sync:fillable
 
     // @dbml-sync:casts
     protected $casts = [
-        'tanggal' => 'date'
+        'tanggal' => 'date',
     ];
     // @enddbml-sync:casts
 

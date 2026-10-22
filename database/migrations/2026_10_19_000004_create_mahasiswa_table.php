@@ -3,10 +3,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\DB;
 
-return new class extends Migration {
-
+return new class extends Migration
+{
     public function up()
     {
         Schema::create('mahasiswa', function (Blueprint $table) {
@@ -18,7 +17,7 @@ return new class extends Migration {
             $table->string('id_prodi');
             $table->foreign('id_prodi')->references('id_prodi')->on('prodi');
 
-            $table->index(['id_prodi'], 'id_prodi');
+            $table->index(['id_prodi'], 'mahasiswa_id_prodi_index');
         });
     }
 

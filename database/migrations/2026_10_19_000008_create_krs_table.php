@@ -3,10 +3,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\DB;
 
-return new class extends Migration {
-
+return new class extends Migration
+{
     public function up()
     {
         Schema::create('krs', function (Blueprint $table) {
@@ -19,8 +18,8 @@ return new class extends Migration {
             $table->date('tanggal_krs');
             $table->string('status_krs');
 
-            $table->index(['nim'], 'nim');
-            $table->index(['id_kelas'], 'id_kelas');
+            $table->index(['nim'], 'krs_nim_index');
+            $table->index(['id_kelas'], 'krs_id_kelas_index');
         });
     }
 

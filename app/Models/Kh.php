@@ -10,21 +10,29 @@ class Kh extends Model
     use HasFactory;
 
     // @dbml-sync:table-property
-    
+    protected $table = 'khs';
+
+    protected $primaryKey = 'id_khs';
+
+    protected $keyType = 'string';
+
+    public $incrementing = false;
+
+    public $timestamps = false;
     // @enddbml-sync:table-property
 
     // @dbml-sync:fillable
     protected $fillable = [
         'nim',
-		'semester',
-		'ips',
-		'total_sks'
+        'semester',
+        'ips',
+        'total_sks',
     ];
     // @enddbml-sync:fillable
 
     // @dbml-sync:casts
     protected $casts = [
-        
+
     ];
     // @enddbml-sync:casts
 

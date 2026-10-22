@@ -12,6 +12,9 @@ use RuntimeException;
  */
 class MahasiswaFactory extends Factory
 {
+    /**
+     * @var list<string>|null
+     */
     private ?array $prodiIds = null;
 
     /**
@@ -21,7 +24,10 @@ class MahasiswaFactory extends Factory
      */
     public function definition(): array
     {
-        $prodiIds = $this->prodiIds ??= Prodi::query()->pluck('id_prodi')->all();
+        $prodiIds = $this->prodiIds ??= Prodi::query()
+            ->orderBy('id_prodi')
+            ->pluck('id_prodi')
+            ->all();
 
         if ($prodiIds === []) {
             throw new RuntimeException('Seed at least one program of study before creating mahasiswa.');

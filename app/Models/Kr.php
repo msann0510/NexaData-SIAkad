@@ -10,22 +10,30 @@ class Kr extends Model
     use HasFactory;
 
     // @dbml-sync:table-property
-    
+    protected $table = 'krs';
+
+    protected $primaryKey = 'id_krs';
+
+    protected $keyType = 'string';
+
+    public $incrementing = false;
+
+    public $timestamps = false;
     // @enddbml-sync:table-property
 
     // @dbml-sync:fillable
     protected $fillable = [
         'nim',
-		'id_kelas',
-		'semester',
-		'tanggal_krs',
-		'status_krs'
+        'id_kelas',
+        'semester',
+        'tanggal_krs',
+        'status_krs',
     ];
     // @enddbml-sync:fillable
 
     // @dbml-sync:casts
     protected $casts = [
-        'tanggal_krs' => 'date'
+        'tanggal_krs' => 'date',
     ];
     // @enddbml-sync:casts
 

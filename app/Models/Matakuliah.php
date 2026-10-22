@@ -11,20 +11,28 @@ class Matakuliah extends Model
 
     // @dbml-sync:table-property
     protected $table = 'matakuliah';
+
+    protected $primaryKey = 'kode_mk';
+
+    protected $keyType = 'string';
+
+    public $incrementing = false;
+
+    public $timestamps = false;
     // @enddbml-sync:table-property
 
     // @dbml-sync:fillable
     protected $fillable = [
         'nama_mk',
-		'sks',
-		'semester',
-		'id_prodi'
+        'sks',
+        'semester',
+        'id_prodi',
     ];
     // @enddbml-sync:fillable
 
     // @dbml-sync:casts
     protected $casts = [
-        
+
     ];
     // @enddbml-sync:casts
 

@@ -11,18 +11,26 @@ class Dosen extends Model
 
     // @dbml-sync:table-property
     protected $table = 'dosen';
+
+    protected $primaryKey = 'id_dosen';
+
+    protected $keyType = 'string';
+
+    public $incrementing = false;
+
+    public $timestamps = false;
     // @enddbml-sync:table-property
 
     // @dbml-sync:fillable
     protected $fillable = [
         'nama_dosen',
-		'id_prodi'
+        'id_prodi',
     ];
     // @enddbml-sync:fillable
 
     // @dbml-sync:casts
     protected $casts = [
-        
+
     ];
     // @enddbml-sync:casts
 

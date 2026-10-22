@@ -10,20 +10,28 @@ class Kela extends Model
     use HasFactory;
 
     // @dbml-sync:table-property
-    
+    protected $table = 'kelas';
+
+    protected $primaryKey = 'id_kelas';
+
+    protected $keyType = 'string';
+
+    public $incrementing = false;
+
+    public $timestamps = false;
     // @enddbml-sync:table-property
 
     // @dbml-sync:fillable
     protected $fillable = [
         'nama_kelas',
-		'kode_mk',
-		'id_dosen'
+        'kode_mk',
+        'id_dosen',
     ];
     // @enddbml-sync:fillable
 
     // @dbml-sync:casts
     protected $casts = [
-        
+
     ];
     // @enddbml-sync:casts
 
